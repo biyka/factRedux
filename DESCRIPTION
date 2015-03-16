@@ -1,0 +1,10 @@
+Package: factRedux
+Title: Package to help when working with factors that have large numbers of different levels
+Version: 0.1
+Authors@R: person("Ben", "Downe", email = "ben@biyka.com",
+                  role = c("aut", "cre"))
+Description: What the package does (one paragraph)
+Depends: R (>= 3.1.0)
+License: GPL V2
+LazyData: true
+Imports: magrittr
