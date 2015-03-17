@@ -1,18 +1,24 @@
-#' @author Ben Downe
-#' 
-#' @param factor factor to be simplified
 #' 
 #' @title factRedux Function
 #' 
+#' @author Ben Downe
+#' 
+#' @param factor factor to be simplified
+#' @param new.level factor level to replace levels outside those being considered
+#' @param levels number of levels to retain
+#' @param include.other if the other factor levels are to be retained
+#' 
 #' @details Function to create an other category in functions where there are too many different levels to present cleanly
+#' 
+#' @import magrittr
+#' @import dplyr
 #' 
 #' @export
 #' 
-#' 
 
-factRedux <- function(data, factor = "", levels=10, inc.other=TRUE) {
+factRedux <- function(data, factor = "", new.level = "Other", levels=10, inc.other=TRUE) {
   
-  l <- data %>% count_(factor, sort=TRUE) %>% head(n=levels)
+  l <- as.data.frame(data %>% count_(factor, sort=TRUE) %>% head(n=levels))
   
   l[,factor] <- droplevels(l[,factor])
   

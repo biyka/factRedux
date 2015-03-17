@@ -6,4 +6,3 @@
 #' @docType package
 #' @name factRedux
 #' @import magrittr dplyr
-NULL
